@@ -14,3 +14,5 @@ retrieve order and display it in item cards
 todo:
 
 1. add a function to trigger the stripe api
+
+Danny was here
