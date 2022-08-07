@@ -15,4 +15,3 @@ todo:
 
 1. add a function to trigger the stripe api
 
-Danny was here
