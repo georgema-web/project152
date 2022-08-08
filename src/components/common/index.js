@@ -19,7 +19,7 @@ export const createGuestId = () => {
 export const serializeItem = (options) => {
     let serialString = '';
     for (const [key, value] of Object.entries(options)) {
-        serialString += key + '||' + value + '|||';
+        serialString += key + '_' + value + '__';
     }
     return serialString;
 };
