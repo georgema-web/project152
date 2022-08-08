@@ -1,14 +1,19 @@
 import React from 'react';
 import { getCart } from '../common';
-import { Box } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import ProductCard from './ProductCard';
 
 export default function CartPage() {
-    getCart();
+    const cartItems = getCart();
+
     return (
         <Box display="div" justifyContent="center" alignItems="center">
-            <ProductCard />
-            <ProductCard />
+            {cartItems.map((e) => {
+                return <ProductCard paramString={e} />;
+            })}
+            <Box>
+                <Button>Checkout</Button>
+            </Box>
         </Box>
     );
 }

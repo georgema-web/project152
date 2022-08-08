@@ -17,17 +17,32 @@ export const createGuestId = () => {
  * @returns string of format 'option1_value1_option2_value2_...'
  */
 export const serializeItem = (options) => {
-    let serialString = '';
+    const arr = [];
     for (const [key, value] of Object.entries(options)) {
-        serialString += key + '_' + value + '__';
+        arr.push(`${key}=${value}`);
     }
-    return serialString;
+    return arr.join('&');
 };
 
-export const unserializeItem = (options) => {};
+/**
+ * Unserialize product options string into dictionary
+ * @param options string of format 'option1_value1_option2_value2_...'
+ * @returns options dict
+ */
+export const unserializeItem = (optionsString) => {
+    const dict = {};
+    optionsString.split('&').forEach((kvPair) => {
+        const kvArr = kvPair.split('=');
+        dict[kvArr[0]] = kvArr[1];
+    });
+    return dict;
+};
 
 export const getCart = () => {
-    const cartItems = Object.keys(localStorage).filter((key) => key.match(/Product_.*/));
-    console.log(Object.keys(localStorage));
-    console.log('test', cartItems);
+    return Object.keys(localStorage).filter((key) => key.match(/Product=.*/));
+    /**
+     * TODO: we need to verify the flat string with firestore,
+     * only ones that are in firestore are allowed to be displayed.
+     * We also need to repeat this process right before checkout.
+     */
 };
