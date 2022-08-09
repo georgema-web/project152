@@ -15,3 +15,12 @@ todo:
 
 1. add a function to trigger the stripe api
 
+Need to do:
+
+1. Danny is working on Product Page -> output:
+
+LocalStorage contract:
+Product_TheSunScreen**Tint_Clear**Size_Large{
+price: int,
+count: int >= 0,
+}
