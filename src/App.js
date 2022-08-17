@@ -12,6 +12,8 @@ import Box from '@mui/material/Box';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { orange } from '@mui/material/colors';
 
+import { FunctionDiv } from './sample.js';
+
 const theme = createTheme({
     palette: {
         primary: orange,
@@ -27,6 +29,7 @@ export default function App() {
             <ThemeProvider theme={theme}>
                 <div>
                     <TopBar />
+                    <FunctionDiv />
                     <Routes>
                         <Route exact path="/" element={<LandingPage />} />
                         <Route exact path="/product" element={<ProductPage />} />

@@ -44,8 +44,8 @@ function Sun() {
                 variants={draw}
                 custom={1}
             />
-            <motion.line x1="400" y1="100" x2="200" y2="100" stroke="orange" variants={draw} custom={1} />
-            <motion.line x1="410" y1="150" x2="250" y2="250" stroke="orange" variants={draw} custom={1} />
+            <motion.line x1="400" y1="100" x2="200" y2="100" stroke="orange" variants={draw} custom={2} />
+            <motion.line x1="410" y1="150" x2="250" y2="250" stroke="orange" variants={draw} custom={3} />
         </motion.svg>
     );
 }
